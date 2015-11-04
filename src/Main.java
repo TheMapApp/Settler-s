@@ -8,12 +8,12 @@ public class Main extends JPanel {
 	Grid gamemap = new Grid(300,200);
 	
 	
-<<<<<<< HEAD
+
 	DiceRoller dice = new DiceRoller();
 	
-=======
+
 	//denisa is trying to figure it out
->>>>>>> origin/master
+
 	
 	
 	 Main(int width, int height) {

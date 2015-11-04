@@ -1,11 +1,9 @@
 
 public class DiceRoller {
 
-	
-<<<<<<< HEAD
-	public static void main(String[] args){
-=======
->>>>>>> origin/master
+
+
+
 		
 		//print the method for establishing the result
 	
