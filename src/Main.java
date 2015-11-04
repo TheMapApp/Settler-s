@@ -8,12 +8,14 @@ public class Main extends JPanel {
 	Grid gamemap = new Grid(300,200);
 	
 	
+	DiceRoller dice = new DiceRoller();
 	
 	
 	
 	 Main(int width, int height) {
 	       
 		 Grid gamemap = new Grid(200,200);
+		 dice.Roll();
 		 
 	 }
 	 

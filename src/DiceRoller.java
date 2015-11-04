@@ -1,13 +1,11 @@
 
 public class DiceRoller {
 
-	public static void main(String[] args){
+	
 		
 		//print the method for establishing the result
-		System.out.println(diceRoller());
-		
-	}
-	public static int diceRoller(){ //method needed to roll the dice in the game
+	
+	public int Roll(){ //method needed to roll the dice in the game
 		
 		/*in this method the dice will be rolled
 		 * So the point is to create a method that allows for two dice to be rolled
@@ -31,6 +29,7 @@ public class DiceRoller {
 		//adding the random value from die1 to the random value of die2
 		//integers are used because dice are whole numbers
 		//the sum can be any number between 2 and 12
+		System.out.println(sum);
 		
 		return sum;
 		
