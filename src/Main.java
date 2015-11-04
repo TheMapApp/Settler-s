@@ -8,7 +8,7 @@ public class Main extends JPanel {
 	Grid gamemap = new Grid(300,200);
 	
 	
-	
+	//denisa is trying to figure it out
 	
 	
 	 Main(int width, int height) {
