@@ -12,24 +12,31 @@ public class Main extends JPanel {
 	DiceRoller dice = new DiceRoller();
 	
 
-	//denisa is trying to figure it out
+
 
 	
 	
 	 Main(int width, int height) {
 	       
-		 Grid gamemap = new Grid(200,200);
+		
 		 dice.Roll();
 		 
 	 }
 	 
 	 @Override
 	    public void paint(Graphics g) {
+		 
+		 //initialises the grid
+		 Grid gamemap = new Grid(100,100);
 		 gamemap.fill();
 		 
+		 
+		 // this for loop draws each hexagon
 		 for(int k =0; k<5;k++){
 			 for(int l =0; l<5;l++){
 				 
+				 
+				 // some of the places in the array are empty because of the 3,4,5,4,3 structure of the game map
 				 if(gamemap.hexarray[k][l]!=null){
 		
 		 gamemap.hexarray[k][l].paint(g);
@@ -40,7 +47,10 @@ public class Main extends JPanel {
 
 
 	 public static void main(String[] args) {
-
+		 
+		 
+		 
+//sizing of the gamemap
 	        int width = 800;
 	        int height = 600;
 

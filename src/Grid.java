@@ -2,41 +2,35 @@ import java.awt.*;
 
 
 public class Grid {
-	//hej tobias
+	
 	
 	int _i;
 	int _k;
+	
+	// the color of the game map(does not work atm)
 	Color bob = new Color(255,0,0);
 	
 	public Hexagon[][] hexarray = new Hexagon[5][5];
-	
-
-
 	
 	Grid(int i, int k){
 		
 		_i=i;
 		_k = k;
 		
-		
-		
-		
 	}
-	
-	
-
+	// makes the pattern and fills the hexagons into the 2d array
 		public void fill(){
 		 
 		 for(int r =0; r <3; r++){
-		    hexarray[0][r]=new Hexagon(r*50+200,204);}
+		    hexarray[0][r]=new Hexagon((r*50+_i)*2,(_k)*2);}
 		 for(int r =0; r <4; r++){
-			 hexarray[1][r]=new Hexagon (r*50+175,250);  }
+			 hexarray[1][r]=new Hexagon ((r*50+_i-25)*2,(_k+50)*2);  }
 		 for(int r =0; r <5; r++){
-			 hexarray[2][r]=new Hexagon (r*50+150,300);  }
+			 hexarray[2][r]=new Hexagon ((r*50+_i-50)*2,(_k+100)*2);  }
 		 for(int r =0; r <4; r++){
-			 hexarray[3][r]=new Hexagon (r*50+175,350);  }
+			 hexarray[3][r]=new Hexagon ((r*50+_i-25)*2,(_k+150)*2);  }
 		 for(int r =0; r <3; r++){
-			 hexarray[4][r]=new Hexagon (r*50+200,400);  }
+			 hexarray[4][r]=new Hexagon ((r*50+_i)*2,(_k+200)*2);  }
 				 
 		}	 
 				 
