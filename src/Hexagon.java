@@ -3,6 +3,7 @@ import java.awt.Graphics;
 public class Hexagon {
 	
 	//svennebanan
+	//BananSven
 	int _posx;
 	int _posy;
 	

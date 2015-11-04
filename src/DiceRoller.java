@@ -1,6 +1,7 @@
 
 public class DiceRoller {
 
+	
 	public static void main(String[] args){
 		
 		//print the method for establishing the result
