@@ -2,6 +2,7 @@ import java.awt.Graphics;
 
 public class Hexagon {
 	
+	//svennebanan
 	int _posx;
 	int _posy;
 	
