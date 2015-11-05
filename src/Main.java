@@ -5,20 +5,17 @@ import java.awt.*;
 
 public class Main extends JPanel {
 	
-	Grid gamemap = new Grid(300,200);
 	
+	Grid gamemap = new Grid(300,200);
 	
 
 	DiceRoller dice = new DiceRoller();
 	
 
-
-
-	
 	
 	 Main(int width, int height) {
 	       
-		
+		 this.addMouseListener(new Mouseinput());
 		 dice.Roll();
 		 
 	 }
@@ -29,20 +26,25 @@ public class Main extends JPanel {
 		 //initialises the grid
 		 Grid gamemap = new Grid(100,100);
 		 gamemap.fill();
+		
 		 
 		 
 		 // this for loop draws each hexagon
 		 for(int k =0; k<5;k++){
-			 for(int l =0; l<5;l++){
-				 
-				 
-				 // some of the places in the array are empty because of the 3,4,5,4,3 structure of the game map
-				 if(gamemap.hexarray[k][l]!=null){
+			 for(int l =0; l<5;l++){		 
+		 // some of the places in the array are empty because of the 3,4,5,4,3 structure of the game map
+		if(gamemap.hexarray[k][l]!=null){
 		
 		 gamemap.hexarray[k][l].paint(g);
+		 
+		
 				 }
 			 }
 		 }
+		 
+		 
+		 
+		 
 	    }
 
 

@@ -12,6 +12,7 @@ public class Grid {
 	
 	public Hexagon[][] hexarray = new Hexagon[5][5];
 	
+	
 	Grid(int i, int k){
 		
 		_i=i;
@@ -32,13 +33,14 @@ public class Grid {
 		 for(int r =0; r <3; r++){
 			 hexarray[4][r]=new Hexagon ((r*50+_i)*2,(_k+172)*2);  }
 				 
-		}	 
+		}	
+		
+		
+		
 				 
 			 
-			
-		}
-		 
-	 
+}
+
 	
 	
 
