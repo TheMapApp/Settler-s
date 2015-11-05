@@ -6,7 +6,12 @@ import java.awt.*;
 public class Main extends JPanel {
 	
 	
-	Grid gamemap = new Grid(300,200);
+	
+	 //Initializes the grid
+	 Grid gamemap = new Grid(100,100);
+	
+
+	
 	
 
 	DiceRoller dice = new DiceRoller();
@@ -14,27 +19,40 @@ public class Main extends JPanel {
 
 	
 	 Main(int width, int height) {
-	       
-		 this.addMouseListener(new Mouseinput());
+
+		 gamemap.fill();
+			
+		 for(int k =0; k<5;k++){
+			 for(int l =0; l<5;l++){		 
+		 // some of the places in the array are empty because of the 3,4,5,4,3 structure of the game map
+		if(gamemap.hexarray[k][l]!=null){
+			 this.addMouseListener(gamemap.hexarray[k][l]);
+		}
+	 }
+		 }
+		 
+		
 		 dice.Roll();
 		 
+		 
+	
+	 }
+	 public void update(){
+		
+	this.repaint();
 	 }
 	 
-	 @Override
+	 
+	
 	    public void paint(Graphics g) {
 		 
-		 //initialises the grid
-		 Grid gamemap = new Grid(100,100);
-		 gamemap.fill();
-		
-		 
-		 
+	
 		 // this for loop draws each hexagon
 		 for(int k =0; k<5;k++){
 			 for(int l =0; l<5;l++){		 
 		 // some of the places in the array are empty because of the 3,4,5,4,3 structure of the game map
 		if(gamemap.hexarray[k][l]!=null){
-		
+			 this.addMouseListener(gamemap.hexarray[k][l]);
 		 gamemap.hexarray[k][l].paint(g);
 		 
 		
@@ -46,6 +64,7 @@ public class Main extends JPanel {
 		 
 		 
 	    }
+	
 
 
 	 public static void main(String[] args) {
@@ -68,7 +87,7 @@ public class Main extends JPanel {
 
 	        while (true) { //keep running a loop
 	            //each time the loop is run do
-	        	  //m.update();
+	        	  m.update();
 	            try {
 	                Thread.sleep(10); //stops this part of the program for 10 milliseconds to avoid the loop locking everything. Now the screen has time to update content etc.
 	            } catch (InterruptedException e) {

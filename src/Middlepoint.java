@@ -9,13 +9,20 @@ public class Middlepoint {
 	
 	Middlepoint(int posx, int posy){
 		
-		System.out.println(posx+"+"+posy);
+	
 		
 		_posy = posy;
 		_posx = posx;
 		
 	
 	}
+	
+	 public boolean mousecheck(){
+		 
+		
+		 
+	 return true;
+	 }
 	
 	
 	

@@ -1,14 +1,13 @@
 import java.awt.*;
-
+import javax.swing.*;
 
 public class Grid {
 	
+		
 	
 	int _i;
 	int _k;
 	
-	// the color of the game map(does not work atm)
-	Color bob = new Color(255,0,0);
 	
 	public Hexagon[][] hexarray = new Hexagon[5][5];
 	
@@ -21,6 +20,7 @@ public class Grid {
 	}
 	// makes the pattern and fills the hexagons into the 2d array
 		public void fill(){
+			
 		 
 		 for(int r =0; r <3; r++){
 		    hexarray[0][r]=new Hexagon((r*50+_i)*2,(_k)*2);}
