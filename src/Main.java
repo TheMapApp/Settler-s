@@ -1,6 +1,8 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 
 public class Main extends JPanel {
@@ -9,6 +11,8 @@ public class Main extends JPanel {
 	
 	 //Initializes the grid
 	 Grid gamemap = new Grid(100,100);
+	 static boolean updater = false;
+	
 	
 
 	
@@ -39,7 +43,11 @@ public class Main extends JPanel {
 	 }
 	 public void update(){
 		
+		 
+		if(Grid.updater==true){
 	this.repaint();
+	Grid.updater=false;
+		}
 	 }
 	 
 	 
@@ -89,7 +97,7 @@ public class Main extends JPanel {
 	            //each time the loop is run do
 	        	  m.update();
 	            try {
-	                Thread.sleep(10); //stops this part of the program for 10 milliseconds to avoid the loop locking everything. Now the screen has time to update content etc.
+	                Thread.sleep(30); //stops this part of the program for 10 milliseconds to avoid the loop locking everything. Now the screen has time to update content etc.
 	            } catch (InterruptedException e) {
 	                e.printStackTrace();
 	            }
@@ -97,8 +105,7 @@ public class Main extends JPanel {
 	        
 
 	    }
-	    
-	
+
 
 
 	

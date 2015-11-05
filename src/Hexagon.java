@@ -11,6 +11,7 @@ public class Hexagon extends JPanel implements MouseListener {
 	int _posy;
 	boolean itson = false;
 	
+	
 	 //arrays filled with x and y vaules of the hexagon points
 int[] shapex = new int[6];
 int[] shapey = new int[6];
@@ -46,6 +47,7 @@ int[] shapey = new int[6];
 		
 		if(itson==true){
 			 g.fillPolygon(shapex, shapey, 6);
+			
 		
 		}
 		
@@ -66,14 +68,16 @@ int[] shapey = new int[6];
 		int my = e.getY();
 		
 			for(int b=0; b<6;b++){
-				if(10>=Math.sqrt((mx-shapex[b])*(mx-shapex[b]) + (my-shapey[b])*(my-shapey[b]))){
+				if(20>=Math.sqrt((mx-shapex[b])*(mx-shapex[b]) + (my-shapey[b])*(my-shapey[b]))){
 				middlearray[b]=new Middlepoint(shapex[b]-5, shapey[b]-5);
-				
 				itson =true;
+				
+			
 				
 				}
 	}
-
+			Grid.updater = true;
+			System.out.println("hey"+Grid.updater);
 	}
 
 

@@ -7,7 +7,7 @@ public class Grid {
 	
 	int _i;
 	int _k;
-	
+	static boolean updater = false;
 	
 	public Hexagon[][] hexarray = new Hexagon[5][5];
 	
