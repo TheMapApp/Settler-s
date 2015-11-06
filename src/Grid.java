@@ -8,6 +8,8 @@ public class Grid {
 	int _i;
 	int _k;
 	static boolean updater = false;
+	public static House[] hus = new House[10];
+	public static Road[] vej = new Road[10];
 	
 	public Hexagon[][] hexarray = new Hexagon[5][5];
 	

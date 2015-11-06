@@ -11,8 +11,8 @@ public class Hexagon extends JPanel implements MouseListener {
 	int _posx;
 	int _posy;
 	boolean itson = false;
-	House[] hus = new House[10];
-	Color _color= new Color(0,0,0);
+	Color _color= new Color(0,100,0);
+	Color _color2= new Color(0,0,0);
 	
 	
 	 //arrays filled with x and y vaules of the hexagon points
@@ -45,10 +45,11 @@ int[] shapey = new int[6];
 		
 		
 		// draws the hexagon
-		g.setColor(_color);
+		g.setColor(_color2);
 		g.drawPolygon(shapex, shapey, 6);
 		
 		if(itson==true){
+			g.setColor(_color);
 			 g.fillPolygon(shapex, shapey, 6);
 			
 		
@@ -58,9 +59,12 @@ int[] shapey = new int[6];
 		middlearray[b]=new Middlepoint(shapex[b]-5, shapey[b]-5);
 		middlearray[b].paint(g);
 		
-		if(hus[1]!=null){
-		hus[1].paint(g);
+		if(Grid.hus[1]!=null){
+		Grid.hus[1].paint(g);
 		}
+		if(Grid.vej[1]!=null){
+			Grid.vej[1].paint(g);
+			}
 		}
 	}
 
@@ -77,12 +81,26 @@ int[] shapey = new int[6];
 				if(20>=Math.sqrt((mx-shapex[b])*(mx-shapex[b]) + (my-shapey[b])*(my-shapey[b]))){
 				middlearray[b]=new Middlepoint(shapex[b]-5, shapey[b]-5);
 				itson =true;
-				 hus[1] = new House(mx,my);
 				
+				
+				
+				
+				
+				if(Grid.hus[1]==null){
+				 Grid.hus[1] = new House(mx,my);
+				}
+				
+				if(dist(mx,Grid.hus[1]._xpos,my,Grid.hus[1]._ypos)<=70)
+				 Grid.vej[1] = new Road(mx,my);
+				 
+				 System.out.println(dist(mx,Grid.hus[1]._xpos,my,Grid.hus[1]._ypos));
+					
+					
+
 				}
 	}
 			Grid.updater = true;
-			System.out.println("hey"+Grid.updater);
+		
 	}
 
 
@@ -109,6 +127,26 @@ int[] shapey = new int[6];
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public double dist(int x1, int x2, int y1, int y2 ){
+	double dist;
+	float xdif;
+	float ydif;
+	
+		if(x1 > x2)
+			xdif = x1 - x2;
+		else 
+			xdif = x2 - x1;
+		if(y1 > y2)
+			ydif = y1 - y2;
+		else
+			ydif = y2 - y1;
+		
+		dist = Math.sqrt(xdif*xdif+ydif*ydif);
+		
+	return dist;
+	}
+	
 	}
 
 

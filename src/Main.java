@@ -13,10 +13,6 @@ public class Main extends JPanel {
 	 Grid gamemap = new Grid(100,100);
 	 static boolean updater = false;
 	
-	
-
-	
-	
 
 	DiceRoller dice = new DiceRoller();
 	
@@ -75,10 +71,7 @@ public class Main extends JPanel {
 	
 
 
-	 public static void main(String[] args) {
-		 
-		 
-		 
+	 public static void main(String[] args) { 
 //sizing of the gamemap
 	        int width = 800;
 	        int height = 600;
