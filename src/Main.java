@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -7,19 +6,21 @@ import java.awt.event.MouseListener;
 
 public class Main extends JPanel {
 	
+
 	
 	
-	 //Initializes the grid
+	 //private static final Graphics Graphics = null;
+	//Initializes the grid
 	 Grid gamemap = new Grid(100,100);
 	 static boolean updater = false;
 	
 	
 
 	
-	
 
 	DiceRoller dice = new DiceRoller();
 	
+	Buying buy = new Buying();
 
 	
 	 Main(int width, int height) {
@@ -33,12 +34,16 @@ public class Main extends JPanel {
 			 this.addMouseListener(gamemap.hexarray[k][l]);
 		}
 	 }
+			 
 		 }
 		 
-		
+		 
+
 		 dice.Roll();
+		
+
 		 
-		 
+		
 	
 	 }
 	 public void update(){
@@ -66,9 +71,12 @@ public class Main extends JPanel {
 		
 				 }
 			 }
+			 
 		 }
 		 
-		 
+		 //buy.paint(g);//paints the circles for buttons
+
+		 buy.paint(g);//paints the circles for buttons
 		 
 		 
 	    }
@@ -83,12 +91,16 @@ public class Main extends JPanel {
 	        int width = 800;
 	        int height = 600;
 
-	       
+	    	
+	        
 	        JFrame frame = new JFrame("Settler's"); //create a new window and set title on window
 	        frame.setSize(width, height); //set size of window
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //set the window to close when the cross in the corner is pressed
 
+	      
 	       
+	          
+	 
 	        Main m = new Main(width,height-22);
 	        frame.add(m);
 	        frame.setVisible(true); //make the window visible
@@ -103,9 +115,9 @@ public class Main extends JPanel {
 	            }
 	        }
 	        
+	    	
 
 	    }
-
 
 
 	

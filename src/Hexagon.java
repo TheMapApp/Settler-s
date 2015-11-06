@@ -77,7 +77,7 @@ int[] shapey = new int[6];
 				}
 	}
 			Grid.updater = true;
-			System.out.println("hey"+Grid.updater);
+			//System.out.println("hey"+Grid.updater);
 	}
 
 

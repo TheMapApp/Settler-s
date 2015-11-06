@@ -1,9 +1,5 @@
 
 public class DiceRoller {
-
-
-
-
 		
 		//print the method for establishing the result
 	
@@ -31,6 +27,7 @@ public class DiceRoller {
 		//adding the random value from die1 to the random value of die2
 		//integers are used because dice are whole numbers
 		//the sum can be any number between 2 and 12
+		
 		System.out.println(sum);
 		
 		return sum;
