@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -10,6 +11,8 @@ public class Hexagon extends JPanel implements MouseListener {
 	int _posx;
 	int _posy;
 	boolean itson = false;
+	House[] hus = new House[10];
+	Color _color= new Color(0,0,0);
 	
 	
 	 //arrays filled with x and y vaules of the hexagon points
@@ -19,7 +22,6 @@ int[] shapey = new int[6];
 	 int r = 57;
 	 Middlepoint[] middlearray = new Middlepoint[6];
 
-	
 	
 	Hexagon(int posx, int posy){
 		
@@ -43,6 +45,7 @@ int[] shapey = new int[6];
 		
 		
 		// draws the hexagon
+		g.setColor(_color);
 		g.drawPolygon(shapex, shapey, 6);
 		
 		if(itson==true){
@@ -54,6 +57,10 @@ int[] shapey = new int[6];
 		for(int b=0; b<6;b++){
 		middlearray[b]=new Middlepoint(shapex[b]-5, shapey[b]-5);
 		middlearray[b].paint(g);
+		
+		if(hus[1]!=null){
+		hus[1].paint(g);
+		}
 		}
 	}
 
@@ -62,7 +69,6 @@ int[] shapey = new int[6];
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 		int mx = e.getX();
 		int my = e.getY();
@@ -71,8 +77,7 @@ int[] shapey = new int[6];
 				if(20>=Math.sqrt((mx-shapex[b])*(mx-shapex[b]) + (my-shapey[b])*(my-shapey[b]))){
 				middlearray[b]=new Middlepoint(shapex[b]-5, shapey[b]-5);
 				itson =true;
-				
-			
+				 hus[1] = new House(mx,my);
 				
 				}
 	}
@@ -87,26 +92,17 @@ int[] shapey = new int[6];
 		
 	}
 
-
-
-
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
-
-
-
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
 
 	@Override
 	public void mouseExited(MouseEvent e) {
