@@ -9,21 +9,21 @@ public class Main extends JPanel {
 	
 	
 	
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 	 //Initializes the grid
 	 Grid gamemap = new Grid(100,100);
 	 static boolean updater = false;
 	
 
 	DiceRoller dice = new DiceRoller();
-=======
+//=======
 	//denisa is trying to figure it out
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 	
 
 	
 	 Main(int width, int height) {
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 
 		 gamemap.fill();
 			
@@ -38,10 +38,10 @@ public class Main extends JPanel {
 		 
 		
 		 dice.Roll();
-=======
+//=======
 	       
 		 Grid gamemap = new Grid(200,200);
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 		 
 		 
 	
