@@ -65,7 +65,10 @@ public class Hexagon extends JPanel implements MouseListener {
 
 		int mx = e.getX();
 		int my = e.getY();
+<<<<<<< HEAD
 					
+=======
+>>>>>>> origin/master
 
 
 		if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
