@@ -70,6 +70,19 @@ import javax.swing.JPanel;
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
+
+			int mx = e.getX();
+			int my = e.getY();
+			
+			if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
+				System.out.println("3");
+			}
+			if (mx > 800 - 100 && mx < 800 && my > 600 - 200 && my < 600 - 120) {
+				System.out.println("2");
+			}
+			if (mx > 800 - 100 && mx < 800 && my > 600 - 280 && my < 600 - 200) {
+				System.out.println("1");
+			}
 			System.out.println("hey");
 							
 		}
