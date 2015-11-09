@@ -64,30 +64,8 @@ public class Hexagon extends JPanel implements MouseListener {
 
 		int mx = e.getX();
 		int my = e.getY();
-<<<<<<< HEAD
+					
 
-		
-			for(int b=0; b<6;b++){
-				if(20>=Math.sqrt((mx-shapex[b])*(mx-shapex[b]) + (my-shapey[b])*(my-shapey[b]))){
-				middlearray[b]=new Middlepoint(shapex[b]-5, shapey[b]-5);
-				itson =true;
-				
-				
-				
-				
-				
-				if(Grid.hus[1]==null){
-				 Grid.hus[1] = new House(mx,my);
-				}
-				
-				if(dist(mx,Grid.hus[1]._xpos,my,Grid.hus[1]._ypos)<=70)
-				 Grid.vej[1] = new Road(mx,my);
-				 
-				 System.out.println(dist(mx,Grid.hus[1]._xpos,my,Grid.hus[1]._ypos));
-					
-					
-=======
->>>>>>> origin/master
 
 		if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
 			System.out.println("3");
@@ -99,9 +77,9 @@ public class Hexagon extends JPanel implements MouseListener {
 			System.out.println("1");
 		}
 
-		for (int b = 0; b < 6; b++) {
-			if (20 >= Math.sqrt((mx - shapex[b]) * (mx - shapex[b]) + (my - shapey[b]) * (my - shapey[b]))) {
-				middlearray[b] = new Middlepoint(shapex[b] - 5, shapey[b] - 5);
+		for (int l = 0; l < 6; l++) {
+			if (20 >= Math.sqrt((mx - shapex[l]) * (mx - shapex[l]) + (my - shapey[l]) * (my - shapey[l]))) {
+				middlearray[l] = new Middlepoint(shapex[l] - 5, shapey[l] - 5);
 				itson = true;
 
 				if (Grid.hus[1] == null) {
@@ -112,12 +90,13 @@ public class Hexagon extends JPanel implements MouseListener {
 					Grid.vej[1] = new Road(mx, my);
 
 				System.out.println(dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos));
-
+			
 			}
 		}
+				
 		Grid.updater = true;
 		// System.out.println("hey"+Grid.updater);
-
+						
 	}
 
 	@Override

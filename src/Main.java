@@ -10,11 +10,7 @@ public class Main extends JPanel {
 	
 	
 
-<<<<<<< Updated upstream
-	 //private static final Graphics Graphics = null;
-	//Initializes the grid
-=======
->>>>>>> Stashed changes
+
 	 Grid gamemap = new Grid(100,100);
 	 static boolean updater = false;
 
