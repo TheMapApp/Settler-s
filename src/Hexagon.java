@@ -61,6 +61,7 @@ public class Hexagon extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		
 
 		int mx = e.getX();
 		int my = e.getY();

@@ -23,7 +23,7 @@ public class Main extends JPanel {
 	
 	 Main(int width, int height) {
 
-
+		 this.addMouseListener(buy);
 		 gamemap.fill();
 			
 		 for(int k =0; k<5;k++){
@@ -120,7 +120,6 @@ public class Main extends JPanel {
 	    	
 
 	    }
-
-
+	
 	
 }

@@ -1,7 +1,10 @@
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.*;
 
-public class Grid {
+public class Grid  implements MouseListener {
 	
 		
 	
@@ -35,6 +38,32 @@ public class Grid {
 		 for(int r =0; r <3; r++){
 			 hexarray[4][r]=new Hexagon ((r*50+_i)*2,(_k+172)*2);  }
 				 
+		}
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			System.out.println("hey");
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
 		}	
 		
 		
