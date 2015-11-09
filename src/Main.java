@@ -9,33 +9,21 @@ public class Main extends JPanel {
 
 	
 	
-<<<<<<< HEAD
+
 	 //private static final Graphics Graphics = null;
 	//Initializes the grid
 	 Grid gamemap = new Grid(100,100);
 	 static boolean updater = false;
-	
-	
 
-	
-=======
-//<<<<<<< Updated upstream
-	 //Initializes the grid
-	 Grid gamemap = new Grid(100,100);
-	 static boolean updater = false;
-	
->>>>>>> origin/master
 
 	DiceRoller dice = new DiceRoller();
-//=======
-	//denisa is trying to figure it out
-//>>>>>>> Stashed changes
+
 	
 	Buying buy = new Buying();
 
 	
 	 Main(int width, int height) {
-//<<<<<<< Updated upstream
+
 
 		 gamemap.fill();
 			
@@ -49,18 +37,15 @@ public class Main extends JPanel {
 			 
 		 }
 		 
-<<<<<<< HEAD
-=======
+
 		
 		 dice.Roll();
-//=======
+
 	       
 		 Grid gamemap = new Grid(200,200);
-//>>>>>>> Stashed changes
->>>>>>> origin/master
+
 		 
 
-		 dice.Roll();
 		
 
 		 

@@ -1,19 +1,5 @@
-<<<<<<< HEAD
-/DiceRoller.class
-/Grid.class
-/Hexagon.class
-/Main.class
-/Middlepoint.class
-/Buying.class
-=======
-/.DS_Store
-/DiceRoller.class
-/Grid.class
-/Hexagon.class
+/.gitignore
 /House.class
-/Main.class
-/Middlepoint.class
+/Player.class
 /Road.class
 /Trading.class
-/Player.class
->>>>>>> origin/master

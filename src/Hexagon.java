@@ -100,11 +100,9 @@ int[] shapey = new int[6];
 				}
 	}
 			Grid.updater = true;
-<<<<<<< HEAD
+
 			//System.out.println("hey"+Grid.updater);
-=======
-		
->>>>>>> origin/master
+
 	}
 
 
