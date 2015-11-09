@@ -1,20 +1,10 @@
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
-	import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.awt.event.MouseListener;
 
-import javax.swing.JButton;
-	import javax.swing.JFrame;
-	import javax.swing.JLabel;
-	import javax.swing.JPanel;
-import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 
 
@@ -38,8 +28,7 @@ import javax.swing.ImageIcon;
 				    g.setColor(Color.WHITE);
 				    g.fillOval(width - 100, height - 280, 70, 70);
 				    
-				    //this.paint(g);
-				     //addMouseListener(this);		
+				   		
 				    ImageIcon road = new ImageIcon("images/Road.png");
 				    image = road.getImage();
 				    g.drawImage(image, width - 100, height - 120 , null);
@@ -51,6 +40,9 @@ import javax.swing.ImageIcon;
 				    ImageIcon town = new ImageIcon("images/Town.png");
 				    image = town.getImage();
 				    g.drawImage(image, width - 100, height - 280 , null);
+				    
+				    //this.paint(g);
+				    addMouseListener(this);
 	}
 
 		  
@@ -60,9 +52,10 @@ import javax.swing.ImageIcon;
 			int x = arg0.getX();
 			int y = arg0.getY();
 			
+			
+			
 			System.out.println("jjj");
-	        
-
+	       
 			
 		}
 

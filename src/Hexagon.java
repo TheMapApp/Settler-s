@@ -76,6 +76,7 @@ int[] shapey = new int[6];
 		
 		int mx = e.getX();
 		int my = e.getY();
+
 		
 			for(int b=0; b<6;b++){
 				if(20>=Math.sqrt((mx-shapex[b])*(mx-shapex[b]) + (my-shapey[b])*(my-shapey[b]))){
