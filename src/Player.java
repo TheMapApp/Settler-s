@@ -2,8 +2,16 @@
 public class Player {
 	int [] resources= new int [6]; // an array that stores each player's resources and victory points
 	// this is the constructor for the player
-	public void Player()
+	
+	private int playerId;
+	private boolean longestRoad;
+	
+	
+	
+	public void Player(int id)
 	{
+		playerId=id;
+		resources[5]=0;
 		
 	}
 	//this function initialize an array at the start of the game
@@ -22,6 +30,28 @@ public class Player {
 		else return 0;
 		
 	}
+	//methods for checking if the player has the longest road
+	
+	public boolean checkLongestRoad() {
+		return longestRoad;
+	}
+	public void changeLongestRoad() {
+		
+		if(longestRoad==true) { 
+			longestRoad=false;
+			resources[5]=-2;
+		}
+		else {
+			longestRoad=true;
+			resources[5]=+2;
+		}
+	}
+		
+		public int getId (){
+			return playerId;
+		}
+	}
+	
 	
 	// depending on where the player has the settlements he will get resources
 	//the code needs to be changed 
