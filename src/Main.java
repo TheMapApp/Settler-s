@@ -10,8 +10,7 @@ public class Main extends JPanel {
 	
 	
 
-	 //private static final Graphics Graphics = null;
-	//Initializes the grid
+
 	 Grid gamemap = new Grid(100,100);
 	 static boolean updater = false;
 
@@ -24,7 +23,7 @@ public class Main extends JPanel {
 	
 	 Main(int width, int height) {
 
-
+		 this.addMouseListener(buy);
 		 gamemap.fill();
 			
 		 for(int k =0; k<5;k++){
@@ -121,7 +120,6 @@ public class Main extends JPanel {
 	    	
 
 	    }
-
-
+	
 	
 }

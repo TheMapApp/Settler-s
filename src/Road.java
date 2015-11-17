@@ -22,6 +22,7 @@ public void paint(Graphics g) {
 		// draws the hexagon
 	
 	 g.setColor(_color);
+	 
 		g.drawLine(_xpos, _ypos,Grid.hus[1]._xpos,Grid.hus[1]._ypos);
 		
 		

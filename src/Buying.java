@@ -1,111 +1,118 @@
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
+	import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 	import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
-import javax.swing.JButton;
-	import javax.swing.JFrame;
-	import javax.swing.JLabel;
-	import javax.swing.JPanel;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-
+import javax.swing.JPanel;
 
 	public class Buying extends JPanel implements MouseListener{
 
-	
+		
 		Image image;
 		
 	
 		   
-	public void paint(Graphics g) { //method used for painting the ovals defining the buttons
-				     	
-			int width = 800;
-			int height = 600;
+	public void paint(Graphics g) { 
+		
+		int width = 800;
+		int height = 600;
+		
+				
+			    g.setColor(Color.WHITE);
+			    g.fillOval(width - 100, height - 120, 70, 70);
+			    g.setColor(Color.WHITE);
+			    g.fillOval(width - 100, height - 200, 70, 70);
+			    g.setColor(Color.WHITE);
+			    g.fillOval(width - 100, height - 280, 70, 70);
+			    
+			   		
+			    ImageIcon road = new ImageIcon("images/Road.png");
+			    image = road.getImage();
+			    g.drawImage(image, width - 100, height - 120 , null);
+			    
+			    ImageIcon house = new ImageIcon("images/House.png");
+			    image = house.getImage();
+			    g.drawImage(image, width - 100, height - 200 , null);
+			    
+			    ImageIcon town = new ImageIcon("images/Town.png");
+			    image = town.getImage();
+			    g.drawImage(image, width - 100, height - 280 , null);
+			    
+			    //this.paint(g);
+			    addMouseListener(this);
+}
+
+
+
+	 
+	public double dist(int x1, int x2, int y1, int y2 ){
+		double dist;
+		float xdif;
+		float ydif;
+		
+			if(x1 > x2)
+				xdif = x1 - x2;
+			else 
+				xdif = x2 - x1;
+			if(y1 > y2)
+				ydif = y1 - y2;
+			else
+				ydif = y2 - y1;
 			
-					
-				    g.setColor(Color.WHITE);
-				    g.fillOval(width - 100, height - 120, 70, 70);
-				    g.setColor(Color.WHITE);
-				    g.fillOval(width - 100, height - 200, 70, 70);
-				    g.setColor(Color.WHITE);
-				    g.fillOval(width - 100, height - 280, 70, 70);
-				    
-				    //this.paint(g);
-				     //addMouseListener(this);		
-				    ImageIcon road = new ImageIcon("images/Road.png");
-				    image = road.getImage();
-				    g.drawImage(image, width - 100, height - 120 , null);
-				    
-				    ImageIcon house = new ImageIcon("images/House.png");
-				    image = house.getImage();
-				    g.drawImage(image, width - 100, height - 200 , null);
-				    
-				    ImageIcon town = new ImageIcon("images/Town.png");
-				    image = town.getImage();
-				    g.drawImage(image, width - 100, height - 280 , null);
-	}
-
-		  
-
-		@Override
-		public void mouseClicked(MouseEvent arg0) {
-			int x = arg0.getX();
-			int y = arg0.getY();
+			dist = Math.sqrt(xdif*xdif+ydif*ydif);
 			
-			System.out.println("jjj");
-	        
-
-			
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-		}
-
-		@Override
-		public void mouseExited(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-		}
-
-		@Override
-		public void mousePressed(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent arg0) {
-			// TODO Auto-generated method stub
+		return dist;
 		}
 		
 		
-		public double dist(int x1, int x2, int y1, int y2 ){
-			double dist;
-			float xdif;
-			float ydif;
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+
+			int mx = e.getX();
+			int my = e.getY();
 			
-				if(x1 > x2)
-					xdif = x1 - x2;
-				else 
-					xdif = x2 - x1;
-				if(y1 > y2)
-					ydif = y1 - y2;
-				else
-					ydif = y2 - y1;
-				
-				dist = Math.sqrt(xdif*xdif+ydif*ydif);
-				
-			return dist;
+			if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
+				System.out.println("3");
 			}
+			if (mx > 800 - 100 && mx < 800 && my > 600 - 200 && my < 600 - 120) {
+				System.out.println("2");
+			}
+			if (mx > 800 - 100 && mx < 800 && my > 600 - 280 && my < 600 - 200) {
+				System.out.println("1");
+			}
+			System.out.println("hey");
+							
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		
 	}
+
 
 
