@@ -8,7 +8,7 @@ public class Player {
 	
 	
 	
-	public void Player(int id)
+	public Player(int id)
 	{
 		playerId=id;
 		resources[5]=0;
@@ -58,4 +58,4 @@ public class Player {
 	//a function that checks where the player has settlements and/or cities and updates the resources array
 	
     
-}
+
