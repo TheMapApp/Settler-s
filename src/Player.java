@@ -1,3 +1,7 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
 
 public class Player {
 	int [] resources= new int [6]; // an array that stores each player's resources and victory points
@@ -5,7 +9,7 @@ public class Player {
 	
 	private int playerId;
 	private boolean longestRoad;
-	
+	private boolean Playersturn;
 	
 	
 	public Player(int id)
@@ -50,7 +54,13 @@ public class Player {
 		public int getId (){
 			return playerId;
 		}
+		
+		public boolean checkPlayersTurn (int PlayersTurn){
+		
+			 if (PlayersTurn==1) return true;
+			 else return false;
 	}
+}
 	
 	
 	// depending on where the player has the settlements he will get resources

@@ -45,10 +45,6 @@ public class Main extends JPanel {
 		 Grid gamemap = new Grid(200,200);
 
 		 
-
-		
-
-		 
 		
 	
 	 }
@@ -94,20 +90,17 @@ public class Main extends JPanel {
 	        int width = 800;
 	        int height = 600;
 
-	    	
-	        
+	    	Player p1= new Player(1);
+	        if(p1.checkPlayersTurn(0)== true){
 	        JFrame frame = new JFrame("Settler's"); //create a new window and set title on window
 	        frame.setSize(width, height); //set size of window
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //set the window to close when the cross in the corner is pressed
-
-	      
-	       
 	          
 	 
-	        Main m = new Main(width,height-22);
+	       Main m = new Main(width,height-22);
 	        frame.add(m);
 	        frame.setVisible(true); //make the window visible
-
+	        
 	        while (true) { //keep running a loop
 	            //each time the loop is run do
 	        	  m.update();
@@ -116,6 +109,15 @@ public class Main extends JPanel {
 	            } catch (InterruptedException e) {
 	                e.printStackTrace();
 	            }
+	        }
+	        }
+	        else { JFrame frm = new JFrame();
+	            frm.setSize(width, height);
+	            frm.setBackground(Color.BLACK);
+	        	Main mn= new Main(width,height-22);
+	        	frm.add(mn);
+	        	frm.setVisible(true);
+	        	
 	        }
 	        
 	    	

@@ -20,6 +20,13 @@ public class Hexagon extends JPanel implements MouseListener {
 
 	int r = 57;
 	Middlepoint[] middlearray = new Middlepoint[6];
+	  
+	  Color brick = new Color (152, 0, 0);
+	  Color wood = new Color (0, 102, 0);
+	  Color stone = new Color (115, 115, 115);
+	  Color wheat = new Color (247, 244, 57);
+	  Color sheep = new Color (102, 255, 102);
+	  Color desert = new Color (235, 177, 54);
 
 	Hexagon(int posx, int posy) {
 
@@ -64,6 +71,8 @@ public class Hexagon extends JPanel implements MouseListener {
 				Grid.vej[2].paint(g);
 			}
 		}
+		
+		
 	}
 
 	@Override
@@ -156,5 +165,16 @@ public class Hexagon extends JPanel implements MouseListener {
 
 		return dist;
 	}
+	
+	/*public void drawHex(int resource) {
+		if(resource==0) g.setColor(wheat);
+		else if (resource==1) g.setColor(stone);
+		else if (resource==2) g.setColor(brick);
+		else if (resource==3) g.setColor(wood);
+		else if (resource==4) g.setColor(desert);
+		
+	}*/
+	
+	
 
 }
