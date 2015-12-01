@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 	import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 	public class Buying extends JPanel implements MouseListener{
@@ -40,8 +41,7 @@ import javax.swing.JPanel;
 			    image = town.getImage();
 			    g.drawImage(image, width - 100, height - 280 , null);
 			    
-			    //this.paint(g);
-			    addMouseListener(this);
+		
 }
 
 
@@ -75,15 +75,40 @@ import javax.swing.JPanel;
 			int my = e.getY();
 			
 			if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
+				
 				System.out.println("3");
+				 //create a confirmation window
+			    JFrame frame = new JFrame("Yes/No"); 
+		        frame.setSize(400, 200); //set size of window
+		        frame.setVisible(true); //make the window visible
+		        frame.setResizable(false);
+		        frame.setLocation(200, 200);
+
 			}
+			
+			
 			if (mx > 800 - 100 && mx < 800 && my > 600 - 200 && my < 600 - 120) {
 				System.out.println("2");
+				 //create a confirmation window
+			    JFrame frame = new JFrame("Yes/No"); 
+		        frame.setSize(400, 200); //set size of window
+		        frame.setVisible(true); //make the window visible
+		        frame.setResizable(false);
+		        frame.setLocation(200, 200);
+		        
 			}
+			
+			
 			if (mx > 800 - 100 && mx < 800 && my > 600 - 280 && my < 600 - 200) {
 				System.out.println("1");
+				 //create a confirmation window
+			    JFrame frame = new JFrame("Yes/No"); 
+		        frame.setSize(200, 200); //set size of window
+		        frame.setVisible(true); //make the window visible
+		        frame.setResizable(false);
+		        frame.setLocation(300, 200);
+		        
 			}
-			System.out.println("hey");
 							
 		}
 
