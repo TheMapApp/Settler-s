@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 public class Hexagon extends JPanel implements MouseListener {
 
-	// the posistion of each hexagon
+	// the position of each hexagon
 	int _posx;
 	int _posy;
 	boolean itson = false;
@@ -43,7 +43,6 @@ public class Hexagon extends JPanel implements MouseListener {
 		if (itson == true) {
 			g.setColor(_color);
 			g.fillPolygon(shapex, shapey, 6);
-
 		}
 
 		for (int b = 0; b < 6; b++) {
@@ -61,11 +60,9 @@ public class Hexagon extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		
 
 		int mx = e.getX();
 		int my = e.getY();
-
 
 		for (int l = 0; l < 6; l++) {
 			if (20 >= Math.sqrt((mx - shapex[l]) * (mx - shapex[l]) + (my - shapey[l]) * (my - shapey[l]))) {
@@ -80,7 +77,6 @@ public class Hexagon extends JPanel implements MouseListener {
 					Grid.vej[1] = new Road(mx, my);
 
 				System.out.println(dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos));
-			
 			}
 		}
 				
@@ -89,28 +85,16 @@ public class Hexagon extends JPanel implements MouseListener {
 						
 	}
 
-	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
-	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
-	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
-	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public double dist(int x1, int x2, int y1, int y2) {

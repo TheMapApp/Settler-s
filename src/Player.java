@@ -5,9 +5,7 @@ public class Player {
 	
 	private int playerId;
 	private boolean longestRoad;
-	
-	
-	
+
 	public void Player(int id)
 	{
 		playerId=id;
@@ -25,10 +23,8 @@ public class Player {
 	}
 	//this function returns 1 if the player has reached the maximum number of points
 	public int CheckWin(){
-		
 		if(resources[5]==10) return 1; 
 		else return 0;
-		
 	}
 	//methods for checking if the player has the longest road
 	
@@ -56,6 +52,3 @@ public class Player {
 	// depending on where the player has the settlements he will get resources
 	//the code needs to be changed 
 	//a function that checks where the player has settlements and/or cities and updates the resources array
-	
-    
-}

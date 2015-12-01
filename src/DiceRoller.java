@@ -31,7 +31,5 @@ public class DiceRoller {
 		System.out.println(sum);
 		
 		return sum;
-		
-		
 	}
 }
