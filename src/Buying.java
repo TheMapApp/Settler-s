@@ -1,19 +1,31 @@
 import java.awt.Color;
-	import java.awt.Graphics;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
-	import java.awt.event.MouseListener;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 	public class Buying extends JPanel implements MouseListener{
 
-		
-		Image image;
-		
+		Trading trading; 
 	
+		Image image;
+		boolean window, window1, window2, window3;
+	
+		Buying(){
+			int[] tmparray = new int[6];
+			tmparray[0]= 100;
+			tmparray[1]= 100;
+			tmparray[2]= 100;
+			tmparray[3]= 100;
+			tmparray[4]= 100;
+			tmparray[5]= 100;
+
+			trading = new Trading(tmparray);
+
+		}
 		   
 	public void paint(Graphics g) { 
 		
@@ -41,7 +53,19 @@ import javax.swing.JPanel;
 			    image = town.getImage();
 			    g.drawImage(image, width - 100, height - 280 , null);
 			    
-		
+			   
+			    if(window==true){
+			    	//create a confirmation window
+				    g.setColor(Color.GRAY);
+				    g.drawRect(200, 200, 400, 200);
+				    ImageIcon popUp = new ImageIcon("images/itempopup.png");
+				    image = popUp.getImage();
+				    g.drawImage(image, 200, 200, null);
+				    
+
+			    }
+			    
+	    
 }
 
 
@@ -74,40 +98,40 @@ import javax.swing.JPanel;
 			int mx = e.getX();
 			int my = e.getY();
 			
+			//buy a road
 			if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
 				
 				System.out.println("3");
-				 //create a confirmation window
-			    JFrame frame = new JFrame("Yes/No"); 
-		        frame.setSize(400, 200); //set size of window
-		        frame.setVisible(true); //make the window visible
-		        frame.setResizable(false);
-		        frame.setLocation(200, 200);
-
+				window = true;
+				window1 = true;
 			}
+
+			if(window1 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
+				System.out.println("yes");
+				trading.BuyARoad();
+					
+		}
 			
-			
+			//buy a settlement 
 			if (mx > 800 - 100 && mx < 800 && my > 600 - 200 && my < 600 - 120) {
 				System.out.println("2");
-				 //create a confirmation window
-			    JFrame frame = new JFrame("Yes/No"); 
-		        frame.setSize(400, 200); //set size of window
-		        frame.setVisible(true); //make the window visible
-		        frame.setResizable(false);
-		        frame.setLocation(200, 200);
-		        
+				window = true;
+				window2 = true;
+		       
 			}
-			
-			
+			if(window2 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
+				System.out.println("yes");
+				trading.BuySettlement();
+			}
+			//buy a city
 			if (mx > 800 - 100 && mx < 800 && my > 600 - 280 && my < 600 - 200) {
 				System.out.println("1");
-				 //create a confirmation window
-			    JFrame frame = new JFrame("Yes/No"); 
-		        frame.setSize(200, 200); //set size of window
-		        frame.setVisible(true); //make the window visible
-		        frame.setResizable(false);
-		        frame.setLocation(300, 200);
-		        
+				window = true;		
+				window3 = true;
+			}
+			if(window3 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
+				System.out.println("yes");
+				trading.BuyCity();
 			}
 							
 		}

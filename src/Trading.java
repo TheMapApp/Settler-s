@@ -5,6 +5,7 @@ public class Trading {
 	
 	// initializing the first line with the name of the resources
 		public  Trading(int [] resource){
+			
 			for(int i=0; i< 6; i++)
 			{
 				resources[i]=resource[i];
