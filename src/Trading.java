@@ -12,35 +12,41 @@ public class Trading {
 			
 		}
 	    
-	    public void BuyARoad(){
+	    public boolean BuyARoad(){
 		 
 		 if(resources[0]>= 1 && resources[1]>=1) { resources[0]=- 1;
 		                                           resources[1]=- 1;
+		                                           return true;
 		 // checks if the player has enough resources for buying the road and updates the resources                                                           }
 	 }
+		 else return false;
 	 }
 	 
 	 
-	 public void BuySettlement() {
+	 public boolean BuySettlement() {
 		 if(resources[1]>= 1 && resources[4]>= 1 && resources[2]>=1)
 		 {
 			 resources[1]=- 1;
 			 resources[4]=- 1;
 			 resources[2]=- 1;
 			 resources[5]=+ 1;
+			 return true;
 			 // checks if the player has enough resources for buying the settlements and updates the resources
 		 }
+		 else return false;
 	 }
 	 
-	 public void BuyCity() {
+	 public boolean BuyCity() {
 		 
 		 if(resources[4]> 1 && resources[3]>2)
 		 {
 			 resources[4]=- 2;
 			 resources[4]=- 3;
 			 resources[5]=+ 1;
+			return true;
 			// checks if the player has enough resources for buying the city and updates the resources
 		 }
+		 else return false;
 		 
 	 }
 	 
