@@ -62,6 +62,7 @@ import javax.swing.JPanel;
 				    image = popUp.getImage();
 				    g.drawImage(image, 200, 200, null);
 				    
+			  
 
 			    }
 			    
@@ -99,40 +100,57 @@ import javax.swing.JPanel;
 			int my = e.getY();
 			
 			//buy a road
-			if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
-				
-				System.out.println("3");
-				window = true;
-				window1 = true;
+		if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
+			System.out.println("3");
+			window = true;
+			window1 = true;
 			}
 
 			if(window1 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
 				System.out.println("yes");
 				trading.BuyARoad();
-					
-		}
+			} 
+			
+				if (mx > 435 && mx < 545 && my > 315 && my < 355){
+					System.out.println("No");
+					window = false;
+			}
+			
+		
+	
 			
 			//buy a settlement 
-			if (mx > 800 - 100 && mx < 800 && my > 600 - 200 && my < 600 - 120) {
-				System.out.println("2");
-				window = true;
-				window2 = true;
+		if (mx > 800 - 100 && mx < 800 && my > 600 - 200 && my < 600 - 120) {
+			System.out.println("2");
+			window = true;
+			window2 = true;
 		       
 			}
 			if(window2 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
 				System.out.println("yes");
 				trading.BuySettlement();
 			}
-			//buy a city
-			if (mx > 800 - 100 && mx < 800 && my > 600 - 280 && my < 600 - 200) {
-				System.out.println("1");
-				window = true;		
-				window3 = true;
+			if (mx > 435 && mx < 545 && my > 315 && my < 355){
+				System.out.println("No");
+				window = false;
+			
+			
 			}
+			//buy a city
+		if (mx > 800 - 100 && mx < 800 && my > 600 - 280 && my < 600 - 200) {
+			System.out.println("1");
+			window = true;		
+			window3 = true;
+		
+		}
 			if(window3 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
 				System.out.println("yes");
 				trading.BuyCity();
 			}
+			if (mx > 435 && mx < 545 && my > 315 && my < 355){
+				System.out.println("No");
+				window = false;
+		}
 							
 		}
 
