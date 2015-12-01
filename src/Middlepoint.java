@@ -29,7 +29,6 @@ public class Middlepoint {
 	
 	
 	 public boolean setlamp(boolean lamper){
-		 System.out.println("lollern");
 		 _lamp=lamper;
 		 return _lamp;
 		 
