@@ -31,6 +31,11 @@ public class Hexagon extends JPanel implements MouseListener {
 			shapex[i] = ((int) (_posy + r * Math.cos(i * 2 * Math.PI / 6)));
 			shapey[i] = (int) (_posx + r * Math.sin(i * 2 * Math.PI / 6));
 		}
+		
+		// initialises the corner points
+		for (int b = 0; b < 6; b++) {
+			middlearray[b] = new Middlepoint(shapex[b] - 5, shapey[b] - 5);
+					}	
 	}
 
 	@Override
@@ -47,7 +52,6 @@ public class Hexagon extends JPanel implements MouseListener {
 		}
 
 		for (int b = 0; b < 6; b++) {
-			middlearray[b] = new Middlepoint(shapex[b] - 5, shapey[b] - 5);
 			middlearray[b].paint(g);
 
 			if (Grid.hus[1] != null) {
@@ -68,18 +72,22 @@ public class Hexagon extends JPanel implements MouseListener {
 
 
 		for (int l = 0; l < 6; l++) {
+			
+			//
 			if (20 >= Math.sqrt((mx - shapex[l]) * (mx - shapex[l]) + (my - shapey[l]) * (my - shapey[l]))) {
-				middlearray[l] = new Middlepoint(shapex[l] - 5, shapey[l] - 5);
+				//sets heaxgons to true if their middlepoint is pressed.
 				itson = true;
 
+				//places house if there is no houses yet
 				if (Grid.hus[1] == null) {
 					Grid.hus[1] = new House(mx, my);
 				}
-
-				if (dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos) <= 70)
+				//places road if there is a house
+				if (dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos) <= 70){
 					Grid.vej[1] = new Road(mx, my);
-
-				System.out.println(dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos));
+					//turns on the cornerpoint so it can be used later
+				middlearray[l].setlamp(true);
+				}
 			
 			}
 		}
