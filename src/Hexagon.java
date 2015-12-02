@@ -6,7 +6,9 @@ import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 
 public class Hexagon extends JPanel implements MouseListener {
-
+	
+	static int pmx=0;
+	static int pmy=0;
 	// the posistion of each hexagon
 	int _posx;
 	int _posy;
@@ -96,7 +98,7 @@ public class Hexagon extends JPanel implements MouseListener {
 
 		int mx = e.getX();
 		int my = e.getY();
-			//check if you have bought a house
+		
 		
 		///++++++housebuyer+++++/////
 		if (Buying.houseactive) {
@@ -109,7 +111,7 @@ public class Hexagon extends JPanel implements MouseListener {
 				Grid.hus[Grid.housecounter] = new House(mx, my);
 				middlearray[l].setlamp(true);
 				Grid.housecounter+=1;
-				System.out.println("its onbobobob");
+				System.out.println("house placed on grid");
 				Buying.houseactive = false;
 			}
 			}
@@ -119,16 +121,28 @@ public class Hexagon extends JPanel implements MouseListener {
 		///+++roadbuyer+++////
 		if (Buying.roadactive) {
 			
-			int pmx=0;
-			int pmy=0;
+			//System.out.println(""+mx+"  "+ pmx+"  " +"  "+ my+"  "+ pmy+"" );
+			if(pmx!=0){
+			System.out.println(dist( mx, pmx , my, pmy)  );
+			}
 			for (int l = 0; l < 6; l++) {
 				
-				if (dist(mx, shapex[l] , my, shapey[l]) <= 20 && middlearray[l]._lamp==true) {
-					pmx =mx;
-					pmy = my;
-						}
-				if(pmx!=0 && dist( mx, shapex[l] , my, shapey[l]) <= 20){
+				if (dist(mx, shapex[l] , my, shapey[l]) <= 20 && middlearray[l]._lamp==true &&pmx==0) {
+					pmx =shapex[l];
+					pmy =shapey[l];
+					System.out.println("first point set");
+					middlearray[l].setlamp2(true);
+					
+					}else if(dist( mx, pmx , my, pmy) <= 70 && dist(mx, pmx , my, pmy) >= 30 && dist(mx, shapex[l] , my, shapey[l]) <= 20){
 					Grid.vej[1] = new Road(pmx, pmy,mx,my);
+					System.out.println("second point set");
+					middlearray[l].setlamp(true);
+					middlearray[l].setlamp2(false);
+					pmx =0;
+					pmy =0;
+					Buying.roadactive = false;
+					
+					
 					
 				}
 			

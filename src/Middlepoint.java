@@ -7,6 +7,7 @@ public class Middlepoint {
 	int _posx;
 	int _posy;
 	boolean _lamp = false;
+	boolean _lamp2 = false;
 	Color _color= new Color(0,0,0);
 	
 	
@@ -30,7 +31,18 @@ public class Middlepoint {
 	
 	 public boolean setlamp(boolean lamper){
 		 _lamp=lamper;
+		 System.out.println("lamp is on");
 		 return _lamp;
+		
+		 
+	 }
+	 
+	 
+	 public boolean setlamp2(boolean lamper){
+		 _lamp2=lamper;
+		 System.out.println("lamp2 is on");
+		 return _lamp2;
+		
 		 
 	 }
 	
@@ -42,7 +54,7 @@ public class Middlepoint {
 		g.drawRect(_posx,_posy,15,15	);
 		
 		if(_lamp==true){
-			g.setColor(new Color(255,255,255));	
+			g.setColor(new Color(30,30,255));	
 		g.fillRect(_posx,_posy,15,15);
 		
 		}

@@ -38,6 +38,8 @@ public class Grid  implements MouseListener {
 			 hexarray[3][r]=new Hexagon ((r*50+_i-25)*2,(_k+129)*2);  }
 		 for(int r =0; r <3; r++){
 			 hexarray[4][r]=new Hexagon ((r*50+_i)*2,(_k+172)*2);  }
+		 
+	
 				 
 		}
 		@Override
