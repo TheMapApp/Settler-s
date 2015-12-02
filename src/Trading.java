@@ -41,7 +41,7 @@ public class Trading {
 			 resources[2]-= 1;
 			 resources[5]+= 1;
 			 
-			 System.out.println("bought a house");
+			 System.out.println("bought");
 			 
 			 return true;
 			 // checks if the player has enough resources for buying the settlements and updates the resources
