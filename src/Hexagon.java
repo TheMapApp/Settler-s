@@ -8,9 +8,13 @@ import javax.swing.JPanel;
 public class Hexagon extends JPanel implements MouseListener {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	static int pmx=0;
 	static int pmy=0;
+=======
+
+>>>>>>> parent of a00be7c... roads working!!!
 =======
 
 >>>>>>> parent of a00be7c... roads working!!!
@@ -107,6 +111,7 @@ public class Hexagon extends JPanel implements MouseListener {
 		int my = e.getY();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 =======
 <<<<<<< HEAD
@@ -133,6 +138,9 @@ public class Hexagon extends JPanel implements MouseListener {
 =======
 			//check if you have bought a house
 >>>>>>> origin/master
+=======
+			//check if you have bought a house
+>>>>>>> parent of a00be7c... roads working!!!
 =======
 			//check if you have bought a house
 >>>>>>> parent of a00be7c... roads working!!!
