@@ -6,23 +6,10 @@ import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 
 public class Hexagon extends JPanel implements MouseListener {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 	
 	static int pmx=0;
 	static int pmy=0;
-=======
-
->>>>>>> parent of a00be7c... roads working!!!
-=======
-
->>>>>>> parent of a00be7c... roads working!!!
 	// the posistion of each hexagon
-=======
-
-	// the position of each hexagon
->>>>>>> origin/master
 	int _posx;
 	int _posy;
 	boolean itson = false;
@@ -82,6 +69,7 @@ public class Hexagon extends JPanel implements MouseListener {
 		if (itson == true) {
 			g.setColor(_color);
 			g.fillPolygon(shapex, shapey, 6);
+
 		}
 
 		for (int b = 0; b < 6; b++) {
@@ -106,44 +94,11 @@ public class Hexagon extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		
 
 		int mx = e.getX();
 		int my = e.getY();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 		
-=======
-<<<<<<< HEAD
-
-		if (Main.gameStart) {
-			for (int l = 0; l < 6; l++) {
-				if (20 >= Math.sqrt((mx - shapex[l]) * (mx - shapex[l]) + (my - shapey[l]) * (my - shapey[l]))) {
-					middlearray[l] = new Middlepoint(shapex[l] - 5, shapey[l] - 5);
-					itson = true;
-
-					if (Grid.hus[1] == null) {
-						// Grid.hus[1] = new House(mx, my);
-						Main.tempX = mx;
-						Main.tempY = my;
-						Main.houseSend = true;
-					}
-
-					if (Grid.hus[1] != null && dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos) <= 70)
-						Grid.vej[1] = new Road(mx, my);
-
-					// System.out.println(dist(mx, Grid.hus[1]._xpos, my,
-					// Grid.hus[1]._ypos));
-				}
-=======
-			//check if you have bought a house
->>>>>>> origin/master
-=======
-			//check if you have bought a house
->>>>>>> parent of a00be7c... roads working!!!
-=======
-			//check if you have bought a house
->>>>>>> parent of a00be7c... roads working!!!
 		
 		///++++++housebuyer+++++/////
 		if (Buying.houseactive) {
@@ -156,7 +111,7 @@ public class Hexagon extends JPanel implements MouseListener {
 				Grid.hus[Grid.housecounter] = new House(mx, my);
 				middlearray[l].setlamp(true);
 				Grid.housecounter+=1;
-				System.out.println("its onbobobob");
+				System.out.println("house placed on grid");
 				Buying.houseactive = false;
 			}
 			}
@@ -166,27 +121,33 @@ public class Hexagon extends JPanel implements MouseListener {
 		///+++roadbuyer+++////
 		if (Buying.roadactive) {
 			
-			int pmx=0;
-			int pmy=0;
+			//System.out.println(""+mx+"  "+ pmx+"  " +"  "+ my+"  "+ pmy+"" );
+			if(pmx!=0){
+			System.out.println(dist( mx, pmx , my, pmy)  );
+			}
 			for (int l = 0; l < 6; l++) {
 				
-				if (dist(mx, shapex[l] , my, shapey[l]) <= 20 && middlearray[l]._lamp==true) {
-					pmx =mx;
-					pmy = my;
-						}
-				if(pmx!=0 && dist( mx, shapex[l] , my, shapey[l]) <= 20){
+				if (dist(mx, shapex[l] , my, shapey[l]) <= 20 && middlearray[l]._lamp==true &&pmx==0) {
+					pmx =shapex[l];
+					pmy =shapey[l];
+					System.out.println("first point set");
+					middlearray[l].setlamp2(true);
+					
+					}else if(dist( mx, pmx , my, pmy) <= 70 && dist(mx, pmx , my, pmy) >= 30 && dist(mx, shapex[l] , my, shapey[l]) <= 20){
 					Grid.vej[1] = new Road(pmx, pmy,mx,my);
+					System.out.println("second point set");
+					middlearray[l].setlamp(true);
+					middlearray[l].setlamp2(false);
+					pmx =0;
+					pmy =0;
+					Buying.roadactive = false;
+					
+					
 					
 				}
 			
->>>>>>> origin/master
 			}
-
-			Grid.updater = true;
-			// System.out.println("hey"+Grid.updater);
 		}
-<<<<<<< HEAD
-=======
 		
 		
 		///+++roadbuyer+++////
@@ -237,23 +198,30 @@ public class Hexagon extends JPanel implements MouseListener {
 		Grid.updater = true;
 		// System.out.println("hey"+Grid.updater);
 						
->>>>>>> origin/master
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+
 	}
 
 	public double dist(int x1, int x2, int y1, int y2) {
