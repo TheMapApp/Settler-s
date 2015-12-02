@@ -9,7 +9,28 @@ import javax.swing.JPanel;
 
 	public class Buying extends JPanel implements MouseListener{
 
+<<<<<<< HEAD
 		Image image;
+=======
+		Trading trading; 
+	
+		Image image;
+		boolean window, window1, window2, window3;
+		 static boolean roadactive, houseactive, townactive;
+	
+		Buying(){
+			int[] tmparray = new int[6];
+			tmparray[0]= 100;
+			tmparray[1]= 100;
+			tmparray[2]= 100;
+			tmparray[3]= 100;
+			tmparray[4]= 100;
+			tmparray[5]= 100;
+
+			trading = new Trading(tmparray);
+
+		}
+>>>>>>> origin/master
 		   
 	public void paint(Graphics g) {
 				
@@ -32,9 +53,29 @@ import javax.swing.JPanel;
 			    image = town.getImage();
 			    g.drawImage(image, WIDTH - 100, HEIGHT - 280 , null);
 			    
+<<<<<<< HEAD
 			    //this.paint(g);
 			    addMouseListener(this);
                 }
+=======
+			   
+			    if(window==true){
+			    	//create a confirmation window
+				    g.setColor(Color.GRAY);
+				    g.drawRect(200, 200, 400, 200);
+				    ImageIcon popUp = new ImageIcon("images/itempopup.png");
+				    image = popUp.getImage();
+				    g.drawImage(image, 200, 200, null);
+				    
+			  
+
+			    }
+			    
+	    
+}
+
+
+>>>>>>> origin/master
 
 	 
 	public double dist(int x1, int x2, int y1, int y2 ){
@@ -62,15 +103,72 @@ import javax.swing.JPanel;
 			int mx = e.getX();
 			int my = e.getY();
 			
-			if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
-				System.out.println("3");
+			//buy a road
+		if (mx > 800 - 100 && mx < 800 && my > 600 - 120 && my < 600) {
+			System.out.println("3");
+			window = true;
+			window1 = true;
 			}
-			if (mx > 800 - 100 && mx < 800 && my > 600 - 200 && my < 600 - 120) {
-				System.out.println("2");
+
+			if(window1 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
+				System.out.println("yes");
+				if(trading.BuyARoad()==true){
+				roadactive =true;
+				}
+				window = false;
+			} 
+			
+				if (mx > 435 && mx < 545 && my > 315 && my < 355){
+					System.out.println("No");
+					window = false;
 			}
-			if (mx > 800 - 100 && mx < 800 && my > 600 - 280 && my < 600 - 200) {
-				System.out.println("1");
+			
+		
+	
+			
+			//buy a settlement 
+		if (mx > 800 - 100 && mx < 800 && my > 600 - 200 && my < 600 - 120) {
+			System.out.println("2");
+			window = true;
+			window2 = true;
+		       
 			}
+			if(window2 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
+				System.out.println("yes");
+				if(trading.BuySettlement()==true){
+					houseactive =true;
+					}
+				
+				window = false;
+			}
+			if (mx > 435 && mx < 545 && my > 315 && my < 355){
+				System.out.println("No");
+				window = false;
+			
+			
+			}
+<<<<<<< HEAD
+=======
+			//buy a city
+		if (mx > 800 - 100 && mx < 800 && my > 600 - 280 && my < 600 - 200) {
+			System.out.println("1");
+			window = true;		
+			window3 = true;
+		
+		}
+			if(window3 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
+				System.out.println("yes");
+				if(trading.BuyCity()==true){
+					townactive =true;
+					}
+				window = false;
+			}
+			if (mx > 435 && mx < 545 && my > 315 && my < 355){
+				System.out.println("No");
+				window = false;
+		}
+							
+>>>>>>> origin/master
 		}
 
 		public void mousePressed(MouseEvent e) {

@@ -5,7 +5,12 @@ public class Grid {
 	static boolean updater = false;
 	public static House[] hus = new House[10];
 	public static Road[] vej = new Road[10];
+<<<<<<< HEAD
 
+=======
+	static int housecounter =1;
+	
+>>>>>>> origin/master
 	public Hexagon[][] hexarray = new Hexagon[5][5];
 
 	Grid(int i, int k) {

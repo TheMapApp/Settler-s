@@ -1,3 +1,7 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
 
 public class Player {
 	int[] resources = new int[6]; // an array that stores each player's
@@ -6,11 +10,22 @@ public class Player {
 
 	private int playerId;
 	private boolean longestRoad;
+<<<<<<< HEAD
 
 	public void Player(int id) {
 		playerId = id;
 		resources[5] = 0;
 
+=======
+	private boolean Playersturn;
+	
+	
+	public Player(int id)
+	{
+		playerId=id;
+		resources[5]=0;
+		
+>>>>>>> origin/master
 	}
 
 	// this function initialize an array at the start of the game
@@ -49,6 +64,7 @@ public class Player {
 			resources[5] = +2;
 		}
 	}
+<<<<<<< HEAD
 
 	public int getId() {
 		return playerId;
@@ -59,3 +75,24 @@ public class Player {
 // the code needs to be changed
 // a function that checks where the player has settlements and/or cities and
 // updates the resources array
+=======
+		
+		public int getId (){
+			return playerId;
+		}
+		
+		public boolean checkPlayersTurn (int PlayersTurn){
+		
+			 if (PlayersTurn==1) return true;
+			 else return false;
+	}
+}
+	
+	
+	// depending on where the player has the settlements he will get resources
+	//the code needs to be changed 
+	//a function that checks where the player has settlements and/or cities and updates the resources array
+	
+    
+
+>>>>>>> origin/master
