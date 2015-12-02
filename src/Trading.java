@@ -1,7 +1,7 @@
 
 public class Trading {
 	
-	int [] resources = new int [6]; // an array for storying resources and the number of resources
+	int [] resources = new int [6]; // an array for storing resources and the number of resources
 	
 	// initializing the first line with the name of the resources
 		public  Trading(int [] resource){
@@ -10,20 +10,28 @@ public class Trading {
 			{
 				resources[i]=resource[i];
 			}
-			
 		}
+<<<<<<< HEAD
+
+	    public void BuyARoad(){
+=======
 	    
 	    public boolean BuyARoad(){
+>>>>>>> origin/master
 		 
 		 if(resources[0]>= 1 && resources[1]>=1) { resources[0]-= 1;
 		                                           resources[1]-= 1;
 		                                           System.out.println("bought road");
 		                                           return true;
 		 // checks if the player has enough resources for buying the road and updates the resources                                                           }
+	     }
 	 }
+<<<<<<< HEAD
+=======
 		 else return false;
 	 }
 	 
+>>>>>>> origin/master
 	 
 	 public boolean BuySettlement() {
 		 if(resources[1]>= 1 && resources[4]>= 1 && resources[2]>=1)
@@ -54,8 +62,11 @@ public class Trading {
 			return true;
 			// checks if the player has enough resources for buying the city and updates the resources
 		 }
+<<<<<<< HEAD
+=======
 		 else return false;
 		 
+>>>>>>> origin/master
 	 }
 	 
 	 public void UpdateResources(int [] resource) {
@@ -64,9 +75,8 @@ public class Trading {
 	    	{
 	    		resource[i]= resources[i];
 	    	}
-	 }
-	 
-}
+	    }
+    }
 	 
 	 
 	  

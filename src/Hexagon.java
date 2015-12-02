@@ -6,10 +6,15 @@ import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 
 public class Hexagon extends JPanel implements MouseListener {
+<<<<<<< HEAD
 	
 	static int pmx=0;
 	static int pmy=0;
 	// the posistion of each hexagon
+=======
+
+	// the position of each hexagon
+>>>>>>> origin/master
 	int _posx;
 	int _posy;
 	boolean itson = false;
@@ -69,7 +74,6 @@ public class Hexagon extends JPanel implements MouseListener {
 		if (itson == true) {
 			g.setColor(_color);
 			g.fillPolygon(shapex, shapey, 6);
-
 		}
 
 		for (int b = 0; b < 6; b++) {
@@ -94,11 +98,36 @@ public class Hexagon extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		
 
 		int mx = e.getX();
 		int my = e.getY();
+<<<<<<< HEAD
 		
+=======
+<<<<<<< HEAD
+
+		if (Main.gameStart) {
+			for (int l = 0; l < 6; l++) {
+				if (20 >= Math.sqrt((mx - shapex[l]) * (mx - shapex[l]) + (my - shapey[l]) * (my - shapey[l]))) {
+					middlearray[l] = new Middlepoint(shapex[l] - 5, shapey[l] - 5);
+					itson = true;
+
+					if (Grid.hus[1] == null) {
+						// Grid.hus[1] = new House(mx, my);
+						Main.tempX = mx;
+						Main.tempY = my;
+						Main.houseSend = true;
+					}
+
+					if (Grid.hus[1] != null && dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos) <= 70)
+						Grid.vej[1] = new Road(mx, my);
+
+					// System.out.println(dist(mx, Grid.hus[1]._xpos, my,
+					// Grid.hus[1]._ypos));
+				}
+=======
+			//check if you have bought a house
+>>>>>>> origin/master
 		
 		///++++++housebuyer+++++/////
 		if (Buying.houseactive) {
@@ -146,8 +175,14 @@ public class Hexagon extends JPanel implements MouseListener {
 					
 				}
 			
+>>>>>>> origin/master
 			}
+
+			Grid.updater = true;
+			// System.out.println("hey"+Grid.updater);
 		}
+<<<<<<< HEAD
+=======
 		
 		
 		///+++roadbuyer+++////
@@ -198,30 +233,23 @@ public class Hexagon extends JPanel implements MouseListener {
 		Grid.updater = true;
 		// System.out.println("hey"+Grid.updater);
 						
+>>>>>>> origin/master
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public double dist(int x1, int x2, int y1, int y2) {

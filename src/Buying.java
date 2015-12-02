@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 
 	public class Buying extends JPanel implements MouseListener{
 
+<<<<<<< HEAD
+		Image image;
+=======
 		Trading trading; 
 	
 		Image image;
@@ -27,33 +30,34 @@ import javax.swing.JPanel;
 			trading = new Trading(tmparray);
 
 		}
+>>>>>>> origin/master
 		   
-	public void paint(Graphics g) { 
-		
-		int width = 800;
-		int height = 600;
-		
+	public void paint(Graphics g) {
 				
 			    g.setColor(Color.WHITE);
-			    g.fillOval(width - 100, height - 120, 70, 70);
+			    g.fillOval(WIDTH - 100, HEIGHT - 120, 70, 70);
 			    g.setColor(Color.WHITE);
-			    g.fillOval(width - 100, height - 200, 70, 70);
+			    g.fillOval(WIDTH - 100, HEIGHT - 200, 70, 70);
 			    g.setColor(Color.WHITE);
-			    g.fillOval(width - 100, height - 280, 70, 70);
-			    
-			   		
+			    g.fillOval(WIDTH - 100, HEIGHT - 280, 70, 70);
+
 			    ImageIcon road = new ImageIcon("images/Road.png");
 			    image = road.getImage();
-			    g.drawImage(image, width - 100, height - 120 , null);
+			    g.drawImage(image, WIDTH - 100, HEIGHT - 120 , null);
 			    
 			    ImageIcon house = new ImageIcon("images/House.png");
 			    image = house.getImage();
-			    g.drawImage(image, width - 100, height - 200 , null);
+			    g.drawImage(image, WIDTH - 100, HEIGHT - 200 , null);
 			    
 			    ImageIcon town = new ImageIcon("images/Town.png");
 			    image = town.getImage();
-			    g.drawImage(image, width - 100, height - 280 , null);
+			    g.drawImage(image, WIDTH - 100, HEIGHT - 280 , null);
 			    
+<<<<<<< HEAD
+			    //this.paint(g);
+			    addMouseListener(this);
+                }
+=======
 			   
 			    if(window==true){
 			    	//create a confirmation window
@@ -71,6 +75,7 @@ import javax.swing.JPanel;
 }
 
 
+>>>>>>> origin/master
 
 	 
 	public double dist(int x1, int x2, int y1, int y2 ){
@@ -91,8 +96,6 @@ import javax.swing.JPanel;
 			
 		return dist;
 		}
-		
-		
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
@@ -148,6 +151,8 @@ import javax.swing.JPanel;
 			
 			
 			}
+<<<<<<< HEAD
+=======
 			//buy a city
 		if (mx > 800 - 100 && mx < 800 && my > 600 - 280 && my < 600 - 200) {
 			System.out.println("1");
@@ -167,34 +172,18 @@ import javax.swing.JPanel;
 				window = false;
 		}
 							
+>>>>>>> origin/master
 		}
 
-		@Override
 		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-
 		}
 
-		@Override
 		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-
 		}
 
-		@Override
 		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-
 		}
 
-		@Override
 		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-
 		}
-
-		
 	}
-
-
-
