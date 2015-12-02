@@ -64,36 +64,45 @@ public class Hexagon extends JPanel implements MouseListener {
 		int mx = e.getX();
 		int my = e.getY();
 
-		for (int l = 0; l < 6; l++) {
-			if (20 >= Math.sqrt((mx - shapex[l]) * (mx - shapex[l]) + (my - shapey[l]) * (my - shapey[l]))) {
-				middlearray[l] = new Middlepoint(shapex[l] - 5, shapey[l] - 5);
-				itson = true;
+		if (Main.gameStart) {
+			for (int l = 0; l < 6; l++) {
+				if (20 >= Math.sqrt((mx - shapex[l]) * (mx - shapex[l]) + (my - shapey[l]) * (my - shapey[l]))) {
+					middlearray[l] = new Middlepoint(shapex[l] - 5, shapey[l] - 5);
+					itson = true;
 
-				if (Grid.hus[1] == null) {
-					Grid.hus[1] = new House(mx, my);
+					if (Grid.hus[1] == null) {
+						// Grid.hus[1] = new House(mx, my);
+						Main.tempX = mx;
+						Main.tempY = my;
+						Main.houseSend = true;
+					}
+
+					if (Grid.hus[1] != null && dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos) <= 70)
+						Grid.vej[1] = new Road(mx, my);
+
+					// System.out.println(dist(mx, Grid.hus[1]._xpos, my,
+					// Grid.hus[1]._ypos));
 				}
-
-				if (dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos) <= 70)
-					Grid.vej[1] = new Road(mx, my);
-
-				System.out.println(dist(mx, Grid.hus[1]._xpos, my, Grid.hus[1]._ypos));
 			}
+
+			Grid.updater = true;
+			// System.out.println("hey"+Grid.updater);
 		}
-				
-		Grid.updater = true;
-		// System.out.println("hey"+Grid.updater);
-						
 	}
 
+	@Override
 	public void mousePressed(MouseEvent e) {
 	}
 
+	@Override
 	public void mouseReleased(MouseEvent e) {
 	}
 
+	@Override
 	public void mouseEntered(MouseEvent e) {
 	}
 
+	@Override
 	public void mouseExited(MouseEvent e) {
 	}
 

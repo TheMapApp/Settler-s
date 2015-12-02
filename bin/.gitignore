@@ -1,14 +1,5 @@
-<<<<<<< HEAD
-/.DS_Store
-/Buying.class
-/DiceRoller.class
-/Grid.class
-/Hexagon.class
-/House.class
-/Main.class
-=======
->>>>>>> origin/master
-/Middlepoint.class
-/Player.class
-/Road.class
-/Trading.class
+/Connecter.class
+/PacketMessage.class
+/HousePos.class
+/HousePosX.class
+/HousePosY.class
