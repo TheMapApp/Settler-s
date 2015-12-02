@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 	
 		Image image;
 		boolean window, window1, window2, window3;
+		 static boolean roadactive, houseactive, townactive;
 	
 		Buying(){
 			int[] tmparray = new int[6];
@@ -108,7 +109,10 @@ import javax.swing.JPanel;
 
 			if(window1 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
 				System.out.println("yes");
-				trading.BuyARoad();
+				if(trading.BuyARoad()==true){
+				roadactive =true;
+				}
+				window = false;
 			} 
 			
 				if (mx > 435 && mx < 545 && my > 315 && my < 355){
@@ -128,7 +132,11 @@ import javax.swing.JPanel;
 			}
 			if(window2 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
 				System.out.println("yes");
-				trading.BuySettlement();
+				if(trading.BuySettlement()==true){
+					houseactive =true;
+					}
+				
+				window = false;
 			}
 			if (mx > 435 && mx < 545 && my > 315 && my < 355){
 				System.out.println("No");
@@ -145,7 +153,10 @@ import javax.swing.JPanel;
 		}
 			if(window3 == true && mx > 255 && mx < 365 && my > 315 && my < 355){
 				System.out.println("yes");
-				trading.BuyCity();
+				if(trading.BuyCity()==true){
+					townactive =true;
+					}
+				window = false;
 			}
 			if (mx > 435 && mx < 545 && my > 315 && my < 355){
 				System.out.println("No");

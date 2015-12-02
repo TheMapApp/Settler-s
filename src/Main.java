@@ -14,6 +14,7 @@ public class Main extends JPanel {
 
 	 Grid gamemap = new Grid(100,100);
 	 static boolean updater = false;
+	
 
 
 	DiceRoller dice = new DiceRoller();
@@ -91,7 +92,7 @@ public class Main extends JPanel {
 	        int height = 600;
 
 	    	Player p1= new Player(1);
-	        if(p1.checkPlayersTurn(0)== true){
+	        if(p1.checkPlayersTurn(1)== true){
 	        JFrame frame = new JFrame("Settler's"); //create a new window and set title on window
 	        frame.setSize(width, height); //set size of window
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //set the window to close when the cross in the corner is pressed
